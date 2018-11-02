@@ -21,10 +21,15 @@ public class NoNullArrayList<T> extends ArrayList<T> {
       throw new IllegalArgumentException();
     }
     else {
-      return super.add(thing);
+      return super.add(thing); //REMEMBER THE RETURN PART
     }
   }
-  //public 
-  
-  
+  public T set(int i, T thing){
+    if (thing == null){
+      throw new IllegalArgumentException();
+    }
+    else {
+      return super.set(i, thing);
+    }
+  }
 }
