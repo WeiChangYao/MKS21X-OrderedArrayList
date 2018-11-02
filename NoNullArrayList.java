@@ -5,16 +5,8 @@ public class NoNullArrayList<T> extends ArrayList<T> {
   public NoNullArrayList() {
     super();
   }
-  public NoNullArrayList(int startingCap){
+    public NoNullArrayList(int startingCap){
     super(startingCap);
-  }
-  public boolean add(T thing){
-    if (thing == null){
-      throw new IllegalArgumentException();
-    }
-    else {
-      super.add(thing);
-    }
   }
   public void add(int index, T thing){
     if (thing == null){
@@ -24,5 +16,15 @@ public class NoNullArrayList<T> extends ArrayList<T> {
       super.add(index, thing);
     }
   }
+  public boolean add(T thing){
+    if (thing == null){
+      throw new IllegalArgumentException();
+    }
+    else {
+      return super.add(thing);
+    }
+  }
+  //public 
+  
   
 }
