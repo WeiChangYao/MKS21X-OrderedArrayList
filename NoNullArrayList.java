@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class NoNullArrayList<T> extends ArrayList<T> { 
   private T value;
-  public NoNullArrayList() {
+  public NoNullArrayList(){
     super();
   }
     public NoNullArrayList(int startingCap){

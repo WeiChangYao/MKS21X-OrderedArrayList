@@ -1,4 +1,6 @@
-public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T>
+import java.util.ArrayList;
+import java.util.List;
+public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T> {
   private T value;
   public OrderedArrayList() {
     super();
@@ -7,30 +9,28 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super(startingCap);
   }
   
-  public bloolean add(T thing){
-    if (size == 0){
-      data[0] = thing;
+  public boolean add(T thing){
+    if (size() == 0){
+      super.add(thing);
       return true;
     }
-    for (int i = 0; i<size; i++){
-      if (data[i].comparesTo(thing) >= 0){
+    for (int i = 0; i<size(); i++){
+      if (super.get(i).compareTo(thing) >= 0){
         super.add(i, thing);
         return true;
       }
     }
-    return false;
+    return super.add(thing);
   }
 
   public void add(int index, T thing){
-    if (data[i].comparesTo(thing) >= 0){
-        super.add(i, thing);
-    }
+    add(thing);
   }
   
   public T set(int i, T thing){
-    T ans = data[i];
+    T ans = super.get(i);
     super.remove(i);
     add(thing);
-    return T;
+    return ans;
   }
 }
